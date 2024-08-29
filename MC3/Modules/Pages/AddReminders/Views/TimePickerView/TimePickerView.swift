@@ -22,7 +22,7 @@ class TimePickerView: UIView {
     }
     
     private func setupView() {
-        backgroundColor = .white
+        backgroundColor = .systemBackground
         layer.cornerRadius = 10
         directionalLayoutMargins = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
         translatesAutoresizingMaskIntoConstraints = false
@@ -30,7 +30,7 @@ class TimePickerView: UIView {
         let timeImage = UIImage(systemName: "clock")
         let timeImageView = UIImageView(image: timeImage)
         timeImageView.contentMode = .scaleAspectFit
-        timeImageView.tintColor = .black
+        timeImageView.tintColor = UIColor(named: "Black")
         
         timePicker.datePickerMode = .time
         timePicker.translatesAutoresizingMaskIntoConstraints = false
@@ -58,7 +58,7 @@ class TimePickerView: UIView {
             ("S", 1)
         ]
         
-        for (index, value) in days.enumerated() {
+        for (_, value) in days.enumerated() {
             let button = createDayButton(title: value.shortTitle, weekday: value.weekday)
             dayButtons.append(button)
             daysStackView.addArrangedSubview(button)

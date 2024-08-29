@@ -27,20 +27,21 @@ class ReminderCell: UITableViewCell {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 17, weight: .bold)
+        label.textColor = UIColor(named: "Black")
         return label
     }()
     
     private let locationLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
-        label.textColor = .gray
+        label.textColor = .systemGray
         return label
     }()
     
     private let timeLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
-        label.textColor = .gray
+        label.textColor = .systemGray
         return label
     }()
     
@@ -72,12 +73,12 @@ class ReminderCell: UITableViewCell {
     private func setupViews() {
         let locationIcon = UIImageView()
         locationIcon.image = UIImage(systemName: "location.fill")
-        locationIcon.tintColor = .gray
+        locationIcon.tintColor = .systemGray
         locationIcon.translatesAutoresizingMaskIntoConstraints = false
         
         let timeIcon = UIImageView()
         timeIcon.image = UIImage(systemName: "clock.fill")
-        timeIcon.tintColor = .gray
+        timeIcon.tintColor = .systemGray
         timeIcon.translatesAutoresizingMaskIntoConstraints = false
         
         let locationStack = UIStackView()
@@ -115,7 +116,7 @@ class ReminderCell: UITableViewCell {
         timeStack.anchor(top: locationStack.bottomAnchor, leading: locationStack.leadingAnchor, bottom: containerView.bottomAnchor, paddingTop: 4, paddingBottom: 12)
         
         containerView.anchor(top: contentView.topAnchor, leading:  contentView.leadingAnchor, bottom: contentView.bottomAnchor, trailing: contentView.trailingAnchor, paddingTop: 8, paddingLeading: 16, paddingBottom: 8, paddingTrailing: 16)
-        containerView.backgroundColor = .white
+        containerView.backgroundColor = .systemBackground
         containerView.layer.cornerRadius = 10
         containerView.layer.masksToBounds = true
     }

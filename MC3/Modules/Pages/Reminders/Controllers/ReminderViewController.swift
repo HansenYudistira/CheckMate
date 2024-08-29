@@ -31,7 +31,7 @@ class ReminderViewController: UIViewController {
         let addIcon = UIImage(systemName: "plus.circle.fill")?.withRenderingMode(.alwaysTemplate)
         var config = UIButton.Configuration.filled()
         config.image = addIcon
-        config.baseForegroundColor = .systemBlue
+        config.baseForegroundColor = .systemOrange
         config.baseBackgroundColor = .clear
         config.preferredSymbolConfigurationForImage = UIImage.SymbolConfiguration(pointSize: 32, weight: .bold
         )

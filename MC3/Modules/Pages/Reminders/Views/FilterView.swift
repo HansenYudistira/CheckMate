@@ -16,7 +16,7 @@ class FilterView: UIStackView {
         let label = UILabel()
         label.text = "Filter by:"
         label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
-        label.textColor = .black
+        label.textColor = UIColor(named: "Black")
         return label
     }()
     
@@ -29,7 +29,7 @@ class FilterView: UIStackView {
         
         let button = UIButton(configuration: config)
         button.layer.cornerRadius = button.frame.height / 2
-        button.addTarget(self, action: #selector(locationButtonTapped), for: .touchUpInside)
+        button.addTarget(FilterView.self, action: #selector(locationButtonTapped), for: .touchUpInside)
         return button
     }()
     
@@ -41,7 +41,7 @@ class FilterView: UIStackView {
         config.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 30, bottom: 8, trailing: 30)
         let button = UIButton(configuration: config)
         button.layer.cornerRadius = button.frame.height / 2
-        button.addTarget(self, action: #selector(timeButtonTapped), for: .touchUpInside)
+        button.addTarget(FilterView.self, action: #selector(timeButtonTapped), for: .touchUpInside)
         return button
     }()
     

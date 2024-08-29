@@ -24,12 +24,12 @@ class SearchButton: UIButton {
         layer.cornerRadius = 10
         
         setTitle("Search", for: .normal)
-        setTitleColor(.gray, for: .normal)
+        setTitleColor(.systemGray, for: .normal)
         titleLabel?.font = UIFont.systemFont(ofSize: 16)
         
         let searchIcon = UIImage(systemName: "magnifyingglass")
         setImage(searchIcon, for: .normal)
-        tintColor = .gray
+        tintColor = .systemGray
         
         semanticContentAttribute = .forceLeftToRight
         contentHorizontalAlignment = .leading

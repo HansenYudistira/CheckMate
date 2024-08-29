@@ -26,7 +26,7 @@ class ChecklistViewController: UIViewController, UITableViewDataSource, UITableV
         view.backgroundColor = .secondarySystemBackground
         
         symbolButton.setImage(UIImage(systemName: reminder?.symbolTag ?? "sparkles"), for: .normal)
-        symbolButton.tintColor = .systemBackground
+        symbolButton.tintColor = .white
         setupSymbolMenu()
         
         var config = UIButton.Configuration.filled()
@@ -45,7 +45,7 @@ class ChecklistViewController: UIViewController, UITableViewDataSource, UITableV
         buttonStack.distribution = .equalCentering
         
         let cardView = UIView()
-        cardView.backgroundColor = .white
+        cardView.backgroundColor = .systemBackground
         cardView.layer.cornerRadius = 10
         cardView.layer.shadowColor = UIColor.black.cgColor
         cardView.layer.shadowOpacity = 0.1
@@ -55,12 +55,12 @@ class ChecklistViewController: UIViewController, UITableViewDataSource, UITableV
         let titleLabel = UILabel()
         titleLabel.text = reminder?.title ?? "Untitled"
         titleLabel.font = UIFont.boldSystemFont(ofSize: 20)
-        titleLabel.textColor = .black
+        titleLabel.textColor = UIColor(named: "Black")
 
         let locationLabel = UILabel()
         locationLabel.text = reminder?.placeMark ?? "-"
         locationLabel.font = UIFont.systemFont(ofSize: 14)
-        locationLabel.textColor = .gray
+        locationLabel.textColor = .systemGray
 
         let timeLabel = UILabel()
         if let reminderTime = reminder?.time {
@@ -70,19 +70,18 @@ class ChecklistViewController: UIViewController, UITableViewDataSource, UITableV
         } else {
             timeLabel.text = "No time"
         }
+        timeLabel.font = UIFont.systemFont(ofSize: 14)
+        timeLabel.textColor = .systemGray
         
         let locationIcon = UIImageView()
         locationIcon.image = UIImage(systemName: "location.fill")
-        locationIcon.tintColor = .gray
+        locationIcon.tintColor = .systemGray
         locationIcon.translatesAutoresizingMaskIntoConstraints = false
         
         let timeIcon = UIImageView()
         timeIcon.image = UIImage(systemName: "clock.fill")
-        timeIcon.tintColor = .gray
+        timeIcon.tintColor = .systemGray
         timeIcon.translatesAutoresizingMaskIntoConstraints = false
-        
-        timeLabel.font = UIFont.systemFont(ofSize: 14)
-        timeLabel.textColor = .gray
         
         let locationStack = UIStackView()
         locationStack.axis = .horizontal
@@ -160,7 +159,7 @@ class ChecklistViewController: UIViewController, UITableViewDataSource, UITableV
         let addNewButton = UIButton(type: .system)
         addNewButton.setTitle("+ Add New", for: .normal)
         addNewButton.titleLabel?.font = UIFont.systemFont(ofSize: 18)
-        addNewButton.tintColor = .lightGray
+        addNewButton.tintColor = .systemGray
         addNewButton.contentHorizontalAlignment = .leading
         addNewButton.addTarget(self, action: #selector(addNewTodo), for: .touchUpInside)
         

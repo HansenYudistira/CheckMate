@@ -36,7 +36,7 @@ class LocationPickerView: UIStackView {
     private func setupView() {
         axis = .vertical
         spacing = 8
-        backgroundColor = .white
+        backgroundColor = .systemBackground
         layer.cornerRadius = 10
         translatesAutoresizingMaskIntoConstraints = false
         
@@ -57,6 +57,7 @@ class LocationPickerView: UIStackView {
         let radiusLabel = UILabel()
         radiusLabel.text = "Set Radius"
         radiusLabel.font = UIFont.systemFont(ofSize: 16)
+        radiusLabel.textColor = UIColor(named: "Black")
         
         addArrangedSubview(radiusLabel)
         addArrangedSubview(segmentedControl)
@@ -76,7 +77,7 @@ class LocationPickerView: UIStackView {
         
         mapView.addSubview(locationButton)
         
-        locationButton.backgroundColor = .white
+        locationButton.backgroundColor = .systemBackground
         locationButton.tintColor = .systemPurple
         locationButton.addTarget(self, action: #selector(locationButtonTapped), for: .touchUpInside)
     }

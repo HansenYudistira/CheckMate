@@ -25,7 +25,6 @@
 	</dict>
 	<key>UIBackgroundModes</key>
 	<array>
-		<string></string>
 		<string>location</string>
 	</array>
 </dict>

@@ -27,7 +27,7 @@ class TimeView: UIStackView {
     
     private func setupView() {
         axis = .horizontal
-        backgroundColor = .white
+        backgroundColor = .systemBackground
         layer.cornerRadius = 10
         distribution = .equalSpacing
         isLayoutMarginsRelativeArrangement = true
@@ -37,6 +37,7 @@ class TimeView: UIStackView {
         let timeLabel = UILabel()
         timeLabel.text = "Set Time"
         timeLabel.font = UIFont.systemFont(ofSize: 16)
+        timeLabel.textColor = UIColor(named: "Black")
         timeLabel.translatesAutoresizingMaskIntoConstraints = false
         
         timeSwitch.translatesAutoresizingMaskIntoConstraints = false

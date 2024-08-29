@@ -40,8 +40,8 @@ class MainTabBarController: UITabBarController {
         navController.navigationBar.prefersLargeTitles = false
         navController.navigationItem.title = title
         
-        UITabBar.appearance().tintColor = .systemBlue
-        UITabBar.appearance().backgroundColor = .white
+        UITabBar.appearance().tintColor = .systemOrange
+        UITabBar.appearance().backgroundColor = .systemBackground
         
         return navController
     }

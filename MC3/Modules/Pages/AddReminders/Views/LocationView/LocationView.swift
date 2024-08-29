@@ -27,7 +27,7 @@ class LocationView: UIStackView {
     
     private func setupView() {
         axis = .horizontal
-        backgroundColor = .white
+        backgroundColor = .systemBackground
         layer.cornerRadius = 10
         distribution = .equalSpacing
         isLayoutMarginsRelativeArrangement = true
@@ -37,6 +37,7 @@ class LocationView: UIStackView {
         let locationLabel = UILabel()
         locationLabel.text = "Set Location"
         locationLabel.font = UIFont.systemFont(ofSize: 16)
+        locationLabel.textColor = UIColor(named: "Black")
         locationLabel.translatesAutoresizingMaskIntoConstraints = false
         
         locationSwitch.translatesAutoresizingMaskIntoConstraints = false
