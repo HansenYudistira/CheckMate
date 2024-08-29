@@ -55,7 +55,7 @@ class ChecklistViewController: UIViewController, UITableViewDataSource, UITableV
         let titleLabel = UILabel()
         titleLabel.text = reminder?.title ?? "Untitled"
         titleLabel.font = UIFont.boldSystemFont(ofSize: 20)
-        titleLabel.textColor = UIColor(named: "Black")
+        titleLabel.textColor = UIColor(named: "BlackColor")
 
         let locationLabel = UILabel()
         locationLabel.text = reminder?.placeMark ?? "-"

@@ -30,7 +30,7 @@ class TimePickerView: UIView {
         let timeImage = UIImage(systemName: "clock")
         let timeImageView = UIImageView(image: timeImage)
         timeImageView.contentMode = .scaleAspectFit
-        timeImageView.tintColor = UIColor(named: "Black")
+        timeImageView.tintColor = UIColor(named: "BlackColor")
         
         timePicker.datePickerMode = .time
         timePicker.translatesAutoresizingMaskIntoConstraints = false

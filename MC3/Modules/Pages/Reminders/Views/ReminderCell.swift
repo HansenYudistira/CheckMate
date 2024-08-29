@@ -27,7 +27,7 @@ class ReminderCell: UITableViewCell {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 17, weight: .bold)
-        label.textColor = UIColor(named: "Black")
+        label.textColor = UIColor(named: "BlackColor")
         return label
     }()
     

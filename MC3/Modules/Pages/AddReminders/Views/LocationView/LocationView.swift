@@ -37,7 +37,7 @@ class LocationView: UIStackView {
         let locationLabel = UILabel()
         locationLabel.text = "Set Location"
         locationLabel.font = UIFont.systemFont(ofSize: 16)
-        locationLabel.textColor = UIColor(named: "Black")
+        locationLabel.textColor = UIColor(named: "BlackColor")
         locationLabel.translatesAutoresizingMaskIntoConstraints = false
         
         locationSwitch.translatesAutoresizingMaskIntoConstraints = false

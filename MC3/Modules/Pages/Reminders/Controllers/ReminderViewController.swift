@@ -22,9 +22,7 @@ class ReminderViewController: UIViewController {
         checkNotificationAuthorization()
         applyFilters()
         
-        filterView.filterChanged = { [weak self] in
-            self?.applyFilters()
-        }
+        filterView.delegate = self
     }
     
     private func setupView() {
@@ -252,6 +250,14 @@ extension ReminderViewController: AddReminderViewControllerDelegate {
 extension ReminderViewController: ChecklistViewControllerDelegate {
     func refreshData() {
         fetchReminders()
+        applyFilters()
+    }
+}
+
+extension ReminderViewController: FilterViewDelegate {
+    func filterChanged(locationFilter: Bool, timeFilter: Bool) {
+        filterView.locationFilterSelected = locationFilter
+        filterView.timeFilterSelected = timeFilter
         applyFilters()
     }
 }

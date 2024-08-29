@@ -7,16 +7,22 @@
 
 import UIKit
 
+protocol FilterViewDelegate: AnyObject {
+    func filterChanged(locationFilter: Bool, timeFilter: Bool)
+}
+
 class FilterView: UIStackView {
     var locationFilterSelected: Bool = false
     var timeFilterSelected: Bool = false
     var filterChanged: (() -> Void)?
     
+    weak var delegate: FilterViewDelegate?
+    
     private let filterLabel: UILabel = {
         let label = UILabel()
         label.text = "Filter by:"
         label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
-        label.textColor = UIColor(named: "Black")
+        label.textColor = UIColor(named: "BlackColor")
         return label
     }()
     
@@ -29,7 +35,6 @@ class FilterView: UIStackView {
         
         let button = UIButton(configuration: config)
         button.layer.cornerRadius = button.frame.height / 2
-        button.addTarget(FilterView.self, action: #selector(locationButtonTapped), for: .touchUpInside)
         return button
     }()
     
@@ -41,7 +46,6 @@ class FilterView: UIStackView {
         config.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 30, bottom: 8, trailing: 30)
         let button = UIButton(configuration: config)
         button.layer.cornerRadius = button.frame.height / 2
-        button.addTarget(FilterView.self, action: #selector(timeButtonTapped), for: .touchUpInside)
         return button
     }()
     
@@ -60,7 +64,6 @@ class FilterView: UIStackView {
         axis = .vertical
         alignment = .leading
         spacing = 4
-        
         let buttonStack = UIStackView(arrangedSubviews: [locationButton, timeButton])
         buttonStack.axis = .horizontal
         buttonStack.spacing = 16
@@ -68,18 +71,21 @@ class FilterView: UIStackView {
         
         addArrangedSubview(filterLabel)
         addArrangedSubview(buttonStack)
+        
+        locationButton.addTarget(self, action: #selector(locationButtonTapped), for: .touchUpInside)
+        timeButton.addTarget(self, action: #selector(timeButtonTapped), for: .touchUpInside)
     }
     
     @objc private func locationButtonTapped() {
         locationFilterSelected.toggle()
         updateButtonAppearance(button: locationButton, isSelected: locationFilterSelected)
-        filterChanged?()
+        delegate?.filterChanged(locationFilter: locationFilterSelected, timeFilter: timeFilterSelected)
     }
     
     @objc private func timeButtonTapped() {
         timeFilterSelected.toggle()
         updateButtonAppearance(button: timeButton, isSelected: timeFilterSelected)
-        filterChanged?()
+        delegate?.filterChanged(locationFilter: locationFilterSelected, timeFilter: timeFilterSelected)
     }
     
     private func updateButtonAppearance(button: UIButton, isSelected: Bool) {

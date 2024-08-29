@@ -37,7 +37,7 @@ class TimeView: UIStackView {
         let timeLabel = UILabel()
         timeLabel.text = "Set Time"
         timeLabel.font = UIFont.systemFont(ofSize: 16)
-        timeLabel.textColor = UIColor(named: "Black")
+        timeLabel.textColor = UIColor(named: "BlackColor")
         timeLabel.translatesAutoresizingMaskIntoConstraints = false
         
         timeSwitch.translatesAutoresizingMaskIntoConstraints = false

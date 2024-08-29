@@ -57,7 +57,7 @@ class LocationPickerView: UIStackView {
         let radiusLabel = UILabel()
         radiusLabel.text = "Set Radius"
         radiusLabel.font = UIFont.systemFont(ofSize: 16)
-        radiusLabel.textColor = UIColor(named: "Black")
+        radiusLabel.textColor = UIColor(named: "BlackColor")
         
         addArrangedSubview(radiusLabel)
         addArrangedSubview(segmentedControl)
